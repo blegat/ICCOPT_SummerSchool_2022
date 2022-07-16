@@ -18,5 +18,5 @@ See Julia's
 for more guidance.
 
 If you have trouble installing before the tutorial, please
-[open a GitHub issue](https://github.com/blegat/TraDE-OPT_2022/issues/new) and we'll try to help.
+[open a GitHub issue](https://github.com/blegat/ICCOPT_SummerSchool_2022/issues/new) and we'll try to help.
 
