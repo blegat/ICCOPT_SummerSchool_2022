@@ -22,7 +22,7 @@ If you have trouble installing before the tutorial, please
 
 ## Download these materials
 
-**Thanks for being prepared and checking out the materials before the tutorial. We're still working on them so please wait for this message to disappear before downloading.**
+**Thanks for being prepared and checking out the materials before the tutorial. We're still working on them; please wait for this message to disappear before downloading.**
 
 Next, download a copy of these materials.
 
