@@ -94,7 +94,9 @@ Iter. | Primal Feas.   | Primal Obj.    | Dual Feas.     | Dual Obj.      | Rel.
     1 |  +5.000000e-01 |  +0.000000e+00 |  +5.857864e-01 |  -0.000000e+00 |   0.000e+00 |   1.518e+00
 (...)
 ```
-Now, open the file `SimpleConicADMM/src/solver.jl` and fix the `FIXME`s and do the `TODO`s and run:
+Now, open the file `SimpleConicADMM/src/solver.jl` and fix the `FIXME`s and do
+the `TODO`s (follow equation (17) of the
+[SCS paper](https://web.stanford.edu/~boyd/papers/pdf/scs_long.pdf)) and then try again:
 ```julia
 julia> test_SOC()
 
@@ -103,5 +105,6 @@ Iter. | Primal Feas.   | Primal Obj.    | Dual Feas.     | Dual Obj.      | Rel.
     1 |  +5.000000e-01 |  +0.000000e+00 |  +5.857864e-01 |  -0.000000e+00 |   0.000e+00 |   1.518e+00
 (...)
 ```
-It should automatically adapt thanks to `Revise` unless you change the definition of a `struct`, e.g., add a field to `struct Cache`.
+It should take your changes into account thanks to `Revise` unless you change
+the definition of a `struct`, e.g., add a field to `struct Cache`.
 In that case close the REPL (`Ctrl+D`), and start again.
