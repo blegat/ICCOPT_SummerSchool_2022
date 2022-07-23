@@ -61,7 +61,7 @@ end
 
 function setup(data::Data{T}) where {T}
     m, n = size(data.A)
-    # TODO Precomputes quantitiees here
+    # TODO Precomputes quantities here
     solution = Solution{T}(n + m)
     cache = Cache{T}(
         # TODO Add precomputed quantities here
