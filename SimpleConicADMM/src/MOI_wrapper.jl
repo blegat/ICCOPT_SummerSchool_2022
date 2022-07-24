@@ -4,7 +4,6 @@ const SUPPORTED_CONES = Union{
     MOI.SecondOrderCone,
     MOI.ExponentialCone,
     MOI.DualExponentialCone,
-    MOI.PositiveSemidefiniteConeTriangle,
 }
 
 MOI.Utilities.@product_of_sets(
@@ -14,7 +13,6 @@ MOI.Utilities.@product_of_sets(
     MOI.SecondOrderCone,
     MOI.ExponentialCone,
     MOI.DualExponentialCone,
-    MOI.PositiveSemidefiniteConeTriangle,
 )
 
 const OptimizerCache{T} = MOI.Utilities.GenericModel{
