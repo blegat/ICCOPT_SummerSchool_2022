@@ -273,11 +273,12 @@ function MOI.get(optimizer::Optimizer, attr::MOI.DualObjectiveValue)
     MOI.check_result_index_bounds(optimizer, attr)
     b = optimizer.data.b
     n = length(optimizer.data.c)
-    value = dot(b, unscaled_dual(optimizer.sol, n)) / optimizer.sol.uτ
+    value = dot(b, unscaled_dual(optimizer.sol, n))
     if !optimizer.max_sense
         value = -value
     end
     if !MOI.Utilities.is_ray(MOI.get(optimizer, MOI.DualStatus()))
+        value /= optimizer.sol.uτ
         value += optimizer.objective_constant
     end
     return value
@@ -321,7 +322,12 @@ function MOI.get(
     ci::MOI.ConstraintIndex,
 )
     MOI.check_result_index_bounds(optimizer, attr)
-    return dual(optimizer.sol, length(optimizer.data.c))[MOI.Utilities.rows(optimizer.cones, ci)]
+    r = MOI.Utilities.rows(optimizer.cones, ci)
+    if MOI.Utilities.is_ray(MOI.get(optimizer, MOI.DualStatus()))
+        return unscaled_dual(optimizer.sol, length(optimizer.data.c))[r]
+    else
+        return dual(optimizer.sol, length(optimizer.data.c))[r]
+    end
 end
 
 function MOI.get(optimizer::Optimizer, ::MOI.ResultCount)
