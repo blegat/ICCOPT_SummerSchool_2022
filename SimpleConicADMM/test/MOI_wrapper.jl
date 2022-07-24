@@ -1,8 +1,7 @@
 module TestSimpleConicADMM
 
 using Test
-import MathOptInterface
-const MOI = MathOptInterface
+using JuMP
 import SimpleConicADMM
 
 function test_runtests()
@@ -16,7 +15,7 @@ function test_runtests()
         Float64,
     )
     config = MOI.Test.Config(
-        atol = 1e-3,
+        atol = 1e-2,
         exclude = Any[
             MOI.ConstraintBasisStatus,
             MOI.VariableBasisStatus,
