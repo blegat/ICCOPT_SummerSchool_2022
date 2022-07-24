@@ -23,8 +23,6 @@ If you have trouble installing before the tutorial, please
 
 ## Download these materials
 
-**Thanks for being prepared and checking out the materials before the tutorial. We're still working on them; please wait for this message to disappear before downloading.**
-
 Next, download a copy of these materials.
 
 **If you have `git` installed**
@@ -58,16 +56,15 @@ Open the notebook `getting_started_with_julia.ipynb`.
 
 Time: 11:00 – 12:30
 
-Open the notebook `getting_started_with_JuMP.ipynb`.
+Open the notebook `getting_started_with_JuMP.ipynb`, then `passport_problem.ipynb`.
 
 ### Modeling nonlinear and conic optimization problems with JuMP
 
 Time: 02:00 – 03:30
 
 Open the notebooks:
-* `passport_problem.ipynb` then
-* `portfolio_optimization.ipynb` then
-* `rocket_control.ipynb`.
+* `rocket_control.ipynb`, then
+* `portfolio_optimization.ipynb`.
 
 ### How to write your own conic solver
 
