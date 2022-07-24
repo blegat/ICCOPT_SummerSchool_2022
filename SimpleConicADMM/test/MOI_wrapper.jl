@@ -6,7 +6,8 @@ import SimpleConicADMM
 
 function test_runtests()
     optimizer = SimpleConicADMM.Optimizer()
-    #MOI.set(optimizer, MOI.Silent(), true) # uncomment this to suppress output
+    MOI.set(optimizer, MOI.RawOptimizerAttribute("max_iters"), 600)
+    MOI.set(optimizer, MOI.Silent(), true) # comment this to enable output
     model = MOI.Bridges.full_bridge_optimizer(
         MOI.Utilities.CachingOptimizer(
             MOI.Utilities.UniversalFallback(MOI.Utilities.Model{Float64}()),
@@ -24,8 +25,14 @@ function test_runtests()
             MOI.ObjectiveBound,
         ],
     )
-    MOI.Test.test_conic_SecondOrderCone_VectorAffineFunction(model, config)
-    MOI.Test.test_conic_RotatedSecondOrderCone_VectorAffineFunction(model, config)
+    MOI.Test.runtests(
+        model,
+        config,
+        exclude = String[
+            "test_model_LowerBoundAlreadySet",
+            "test_model_UpperBoundAlreadySet",
+        ]
+    )
     return
 end
 
